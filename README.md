@@ -4,7 +4,7 @@ Secure zero-trust framework for high-compliance autonomous intelligence systems,
 
 ## Overview
 
-`cautious-octo-goggles` is a framework-oriented repository intended to support governed autonomous intelligence workloads in regulated or high-assurance environments. The platform is described as focusing on:
+`cautious-octo-goggles` is a framework-oriented repository intended to support governed autonomous intelligence workloads in regulated or high-assurance environments. The platform focuses on:
 
 - **Sovereign local infrastructure** for controlled deployment boundaries
 - **Protected connectivity** for secure system-to-system communication
@@ -23,6 +23,13 @@ The primary goals of this project are to:
 - Provide clear boundaries between infrastructure, orchestration, data, and policy layers
 - Improve traceability, auditability, and operational governance
 - Offer a foundation for secure, machine-scale intelligence operations
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Security Model](docs/security-model.md)
+- [Compliance Controls](docs/compliance-controls.md)
+- [Operations Guide](docs/operations.md)
 
 ## Proposed Architecture
 
@@ -105,7 +112,6 @@ As the codebase evolves, consider organizing the repository with a structure sim
 This project should be implemented with security-first defaults.
 
 Recommended principles:
-
 - **Zero trust by default**: Never assume internal trust based on network location
 - **Least privilege**: Grant the minimum permissions required for each workload
 - **Strong identity**: Authenticate workloads, services, users, and agents explicitly
@@ -116,7 +122,6 @@ Recommended principles:
 ## Compliance Design Considerations
 
 For high-compliance environments, the implementation should aim to support:
-
 - Evidence collection for control operation
 - Change tracking and deployment traceability
 - Role-based access controls
@@ -128,7 +133,6 @@ For high-compliance environments, the implementation should aim to support:
 ## Development Guidelines
 
 When building out this repository:
-
 - Prefer modular services with single, well-defined responsibilities
 - Define interfaces and schemas early
 - Treat policy as code where practical
@@ -140,7 +144,6 @@ When building out this repository:
 ## Getting Started
 
 Because the repository is currently minimal, recommended next steps are:
-
 1. Define the initial architecture boundaries in `docs/architecture.md`
 2. Choose the core implementation stack and document it
 3. Create a threat model for agent execution and data ingestion
@@ -148,8 +151,6 @@ Because the repository is currently minimal, recommended next steps are:
 5. Add bootstrap code or infrastructure templates aligned with the architecture
 
 ## Roadmap
-
-A practical initial roadmap could include:
 
 ### Phase 1: Foundation
 - Establish repository structure
@@ -174,7 +175,6 @@ A practical initial roadmap could include:
 Contributions should preserve the project’s goals of security, maintainability, auditability, and operational clarity.
 
 Suggested standards:
-
 - Use small, reviewable pull requests
 - Document architectural decisions in `docs/decision-records/`
 - Include tests for new behavior
@@ -184,7 +184,6 @@ Suggested standards:
 ## Documentation Backlog
 
 Recommended follow-up documents:
-
 - `docs/architecture.md` — system architecture and boundaries
 - `docs/security-model.md` — trust model, identity, and access patterns
 - `docs/compliance-controls.md` — control objectives and evidence strategy
