@@ -2,87 +2,52 @@
 
 Secure zero-trust framework for high-compliance autonomous intelligence systems, combining sovereign local infrastructure, protected connectivity, agent orchestration, structured data ingestion, and audit-ready compliance controls for governed machine-scale operations.
 
+## Project Status
+
+This repository is in an early foundational stage.
+
+Current focus areas:
+- Defining architecture boundaries
+- Establishing security and compliance expectations
+- Documenting operational assumptions
+- Preparing the repository structure for future implementation
+
+At this stage, the repository is documentation-first and intended to provide a clear baseline before code, infrastructure, or workflows are introduced.
+
 ## Overview
 
-`cautious-octo-goggles` is a framework-oriented repository intended to support governed autonomous intelligence workloads in regulated or high-assurance environments. The platform focuses on:
+`cautious-octo-goggles` is a framework-oriented repository intended to support governed autonomous intelligence workloads in regulated or high-assurance environments.
 
-- **Sovereign local infrastructure** for controlled deployment boundaries
-- **Protected connectivity** for secure system-to-system communication
-- **Agent orchestration** for managed autonomous workflows
-- **Structured data ingestion** for predictable, policy-aware data handling
-- **Audit-ready compliance controls** for traceability and governance
+The platform is intended to emphasize:
+- Sovereign or controlled deployment boundaries
+- Protected service connectivity
+- Agent orchestration with bounded execution
+- Structured data ingestion and validation
+- Audit-ready governance and operational traceability
 
-This repository appears to be newly created, so this documentation establishes a starting point for project structure, architecture intent, contribution guidance, and operational expectations.
+## Quickstart
 
-## Goals
+Implementation artifacts are not yet present in the repository, so there is no runnable setup flow today.
 
-The primary goals of this project are to:
-
-- Enable zero-trust deployment patterns for autonomous systems
-- Support regulated and compliance-sensitive environments
-- Provide clear boundaries between infrastructure, orchestration, data, and policy layers
-- Improve traceability, auditability, and operational governance
-- Offer a foundation for secure, machine-scale intelligence operations
+Recommended next steps for turning this repository into an executable project:
+1. Choose and document the implementation stack
+2. Add the initial service or module layout
+3. Define environment configuration conventions
+4. Add linting, tests, and CI checks
+5. Document local development and deployment workflows
 
 ## Documentation
 
-- [Architecture](docs/architecture.md)
-- [Security Model](docs/security-model.md)
-- [Compliance Controls](docs/compliance-controls.md)
-- [Operations Guide](docs/operations.md)
+Core documents currently available:
+- [Architecture](docs/architecture.md) — system architecture and boundaries
+- [Security Model](docs/security-model.md) — trust model, identity, and access patterns
+- [Compliance Controls](docs/compliance-controls.md) — control objectives and evidence strategy
+- [Operations Guide](docs/operations.md) — deployment, monitoring, and incident response guidance
+- [Architecture Decision Records](docs/decision-records/README.md) — how major technical decisions should be captured
 
-## Proposed Architecture
+## Repository Structure
 
-The repository description suggests the following conceptual architecture:
-
-### 1. Sovereign Infrastructure Layer
-Responsible for running the system within controlled infrastructure boundaries.
-
-Potential responsibilities:
-- Local or self-managed runtime environments
-- Secrets and key management integration
-- Network segmentation and workload isolation
-- Policy-based deployment controls
-
-### 2. Secure Connectivity Layer
-Responsible for authenticated, encrypted, and policy-governed connectivity.
-
-Potential responsibilities:
-- Mutual TLS or service identity enforcement
-- API gateway or service mesh integration
-- Outbound and inbound policy enforcement
-- Trusted network path validation
-
-### 3. Agent Orchestration Layer
-Responsible for coordinating autonomous or semi-autonomous tasks.
-
-Potential responsibilities:
-- Agent lifecycle management
-- Task scheduling and execution policies
-- Human-in-the-loop approval points
-- Execution limits, retries, and escalation paths
-
-### 4. Structured Ingestion Layer
-Responsible for ingesting, validating, normalizing, and tracking data.
-
-Potential responsibilities:
-- Schema validation
-- Data lineage tracking
-- Source trust classification
-- Batch and streaming ingestion workflows
-
-### 5. Compliance and Audit Layer
-Responsible for evidencing system behavior and governance posture.
-
-Potential responsibilities:
-- Immutable audit trails
-- Policy decision logging
-- Access and action traceability
-- Control mapping for regulatory requirements
-
-## Suggested Repository Structure
-
-As the codebase evolves, consider organizing the repository with a structure similar to the following:
+The repository is intended to evolve toward a structure similar to the following:
 
 ```text
 .
@@ -104,51 +69,51 @@ As the codebase evolves, consider organizing the repository with a structure sim
 ├── schemas/
 ├── scripts/
 ├── tests/
+├── CONTRIBUTING.md
+├── LICENSE
 └── README.md
 ```
 
-## Security Principles
+## Goals
 
-This project should be implemented with security-first defaults.
+The primary goals of this project are to:
+- Enable zero-trust deployment patterns for autonomous systems
+- Support regulated and compliance-sensitive environments
+- Provide clear boundaries between infrastructure, orchestration, data, and policy layers
+- Improve traceability, auditability, and operational governance
+- Offer a foundation for secure, machine-scale intelligence operations
 
-Recommended principles:
-- **Zero trust by default**: Never assume internal trust based on network location
-- **Least privilege**: Grant the minimum permissions required for each workload
-- **Strong identity**: Authenticate workloads, services, users, and agents explicitly
-- **Defense in depth**: Layer controls across identity, network, data, and execution
-- **Secure defaults**: Default-deny policies wherever possible
-- **Full traceability**: Log security-relevant actions with sufficient context for audit review
+## Architectural Direction
 
-## Compliance Design Considerations
+The repository currently defines a conceptual architecture with five major concerns:
 
-For high-compliance environments, the implementation should aim to support:
-- Evidence collection for control operation
-- Change tracking and deployment traceability
-- Role-based access controls
-- Data retention and lifecycle policies
-- Segregation of duties
-- Incident reconstruction through audit logs
-- Policy exception handling and approvals
+1. Sovereign infrastructure
+2. Secure connectivity
+3. Structured ingestion
+4. Agent orchestration
+5. Compliance and auditability
 
-## Development Guidelines
+These domains are described in more detail in `docs/architecture.md` and should guide future service decomposition and implementation decisions.
 
-When building out this repository:
-- Prefer modular services with single, well-defined responsibilities
-- Define interfaces and schemas early
+## Development Principles
+
+When implementation begins, contributions should generally follow these principles:
+- Prefer modular components with clear responsibilities
 - Treat policy as code where practical
-- Keep infrastructure and application policy version-controlled
-- Avoid hardcoded credentials, tokens, or environment-specific assumptions
+- Avoid hardcoded credentials or environment-specific assumptions
 - Centralize logging and error reporting
-- Add tests for security-sensitive and compliance-sensitive logic
+- Add tests for security-sensitive and compliance-sensitive behavior
+- Document major architectural decisions in ADRs
 
-## Getting Started
+## Contribution Workflow
 
-Because the repository is currently minimal, recommended next steps are:
-1. Define the initial architecture boundaries in `docs/architecture.md`
-2. Choose the core implementation stack and document it
-3. Create a threat model for agent execution and data ingestion
-4. Define the first set of compliance controls and evidence requirements
-5. Add bootstrap code or infrastructure templates aligned with the architecture
+For contribution expectations, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+In general:
+- Keep pull requests small and reviewable
+- Include documentation updates for material changes
+- Use conventional commit messages
+- Add or update tests when behavior changes
 
 ## Roadmap
 
@@ -170,25 +135,6 @@ Because the repository is currently minimal, recommended next steps are:
 - Add control mapping documentation
 - Add operational runbooks
 
-## Contributing
-
-Contributions should preserve the project’s goals of security, maintainability, auditability, and operational clarity.
-
-Suggested standards:
-- Use small, reviewable pull requests
-- Document architectural decisions in `docs/decision-records/`
-- Include tests for new behavior
-- Document security and compliance implications for material changes
-- Use conventional commit messages
-
-## Documentation Backlog
-
-Recommended follow-up documents:
-- `docs/architecture.md` — system architecture and boundaries
-- `docs/security-model.md` — trust model, identity, and access patterns
-- `docs/compliance-controls.md` — control objectives and evidence strategy
-- `docs/operations.md` — deployment, monitoring, and incident response guidance
-
 ## License
 
-No license is currently defined for this repository. Add a license file if you intend others to use, modify, or distribute the project.
+This repository is licensed under the MIT License. See [LICENSE](LICENSE).
